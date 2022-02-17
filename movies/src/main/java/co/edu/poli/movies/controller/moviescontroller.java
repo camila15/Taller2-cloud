@@ -23,27 +23,27 @@ public class moviescontroller {
     @PostMapping
     public movies adicionarmovies(@RequestBody movies movie) {
 
-        return moviesservice.adicionarmovies(movie);
+        return movieservice.adicionarmovies(movie);
     }
 
     @GetMapping
     public List<movies> obtenermovies() {
 
-        return moviesservice.obtenermovies();
+        return movieservice.obtenermovies();
 
     }
 
     @GetMapping("/{id}")
     public void obtenermoviesid(@PathVariable("id") Long id) {
 
-        moviesservice.obtenermoviesid(id);
+        movieservice.obtenermoviesid(id);
     }
 
 
     @DeleteMapping("/{id}")
     public void eliminarmovies(@PathVariable("id") Long id) {
 
-        moviesservice.eliminarmovies(id);
+        movieservice.eliminarmovies(id);
     }
 
 
