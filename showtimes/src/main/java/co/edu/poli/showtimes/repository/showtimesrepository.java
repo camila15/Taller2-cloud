@@ -1,2 +1,4 @@
-package co.edu.poli.showtimes.repository;public interface showtimesrepository {
+package co.edu.poli.showtimes.repository;
+
+public interface showtimesrepository {
 }

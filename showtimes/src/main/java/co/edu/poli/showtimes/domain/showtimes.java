@@ -1,2 +1,4 @@
-package co.edu.poli.showtimes.domain;public class showtimes {
+package co.edu.poli.showtimes.domain;
+
+public class showtimes {
 }
