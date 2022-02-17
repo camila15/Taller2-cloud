@@ -29,14 +29,24 @@ public class bookingsservice {
         return bookingrepository.findAll();
     }
 
-    public void obtenerbookingsid(Long id)
+    public bookings obtenerbookingsid(Long id)
     {
-        bookingrepository.getById(id);
+        return bookingrepository.findById(id).get();
     }
 
-    public void obtenerbookingsuserid(Long userid)
+    public bookings obtenerbookingsuserid(Long userid)
     {
-        bookingrepository.getById(userid);
+        List<bookings> obteneruserid= bookingrepository.findAll();
+        for (int i=0; i<obteneruserid.size();i++){
+
+            if(obteneruserid.get(i).getUserid().equals(userid))
+            {
+                return obteneruserid.get(i);
+            }
+
+        }
+
+        return new bookings();
     }
 
 

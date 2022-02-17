@@ -33,9 +33,9 @@ public class bookingscontroller {
     }
 
     @GetMapping("/{id}")
-    public void obtenerbookingsid(@PathVariable("id") Long id) {
+    public bookings obtenerbookingsid(@PathVariable("id") Long id) {
 
-        bookingservice.obtenerbookingsid(id);
+       return bookingservice.obtenerbookingsid(id);
     }
 
     @DeleteMapping("/{id}")
@@ -44,10 +44,10 @@ public class bookingscontroller {
         bookingservice.eliminarbookings(id);
     }
 
-    @GetMapping("/{userid}")
-    public void obtenerbookingsuserid(@PathVariable("userid") Long userid) {
+    @GetMapping("/user/{userid}")
+    public bookings obtenerbookingsuserid(@PathVariable("userid") Long userid) {
 
-        bookingservice.obtenerbookingsuserid(userid);
+       return bookingservice.obtenerbookingsuserid(userid);
     }
 
 }
