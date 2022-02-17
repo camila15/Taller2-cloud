@@ -30,13 +30,10 @@ public class showtimesservice {
         return showtimerepository.findAll();
     }
 
-    public void obtenershowtimesid(Long id)
+    public showtimes obtenershowtimesid(Long id)
     {
-        showtimerepository.getById(id);
+        return showtimerepository.findById(id).get();
     }
 
-    public void actualizarshowtimes(Long id)
-    {
 
-    }
 }

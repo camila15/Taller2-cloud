@@ -29,16 +29,20 @@ public class showtimescontroller {
     public List<showtimes> obtenershowtimes() {
 
         return showtimeservice.obtenershowtimes();
-
     }
 
     @GetMapping("/{id}")
-    public void obtenershowtimesid(@PathVariable("id") Long id) {
+    public showtimes obtenershowtimesid(@PathVariable("id") Long id) {
 
-        showtimeservice.obtenershowtimesid(id);
+        return showtimeservice.obtenershowtimesid(id);
     }
 
-    //falta el de actualizar
+    @PutMapping ("/{id}")
+
+    public void actualizarshowtimes(@RequestBody showtimes showtime)
+    {
+        showtimeservice.adicionarshowtimes(showtime);
+    }
 
 
 

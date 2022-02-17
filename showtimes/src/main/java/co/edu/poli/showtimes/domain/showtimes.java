@@ -5,7 +5,6 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Entity
@@ -18,7 +17,7 @@ public class showtimes {
     @Id
     private Long id;
 
-    @NotEmpty
+    @NotNull(message = "El campo date no puede estar vacio")
     private Date date;
 
     private String [] movies;
