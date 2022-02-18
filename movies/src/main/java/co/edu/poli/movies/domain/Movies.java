@@ -1,7 +1,9 @@
 package co.edu.poli.movies.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -12,6 +14,8 @@ import javax.validation.constraints.Size;
 @Table(name="Tablamovies")
 @Data
 @Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 
 
 public class Movies {

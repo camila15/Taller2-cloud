@@ -28,7 +28,7 @@ public class Moviescontroller {
     }
 
     @GetMapping
-    public List<Movies> obtenermovies() {
+    public List<MoviesDto> obtenermovies() {
 
         return movieservice.obtenermovies();
 
