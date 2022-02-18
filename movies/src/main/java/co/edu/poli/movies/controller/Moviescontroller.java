@@ -1,8 +1,9 @@
 package co.edu.poli.movies.controller;
 
 
-import co.edu.poli.movies.domain.movies;
-import co.edu.poli.movies.service.moviesservice;
+import co.edu.poli.movies.DTO.MoviesDto;
+import co.edu.poli.movies.domain.Movies;
+import co.edu.poli.movies.service.Moviesservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -15,19 +16,19 @@ import java.util.List;
 @RestController
 @RequestMapping(value ="movie")
 
-public class moviescontroller {
+public class Moviescontroller {
 
     @Autowired
-    private moviesservice movieservice;
+    private Moviesservice movieservice;
 
     @PostMapping
-    public movies adicionarmovies(@RequestBody movies movie) {
+    public Movies adicionarmovies(@RequestBody MoviesDto movie) {
 
         return movieservice.adicionarmovies(movie);
     }
 
     @GetMapping
-    public List<movies> obtenermovies() {
+    public List<Movies> obtenermovies() {
 
         return movieservice.obtenermovies();
 

@@ -1,5 +1,6 @@
 package co.edu.poli.Users.controller;
 
+import co.edu.poli.Users.DTO.UserDto;
 import co.edu.poli.Users.domain.User;
 import co.edu.poli.Users.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +22,13 @@ public class Usercontroller {
     private UserService  userService;
 
     @PostMapping
-    public User adicionarUser(@RequestBody User user) {
+    public User adicionarUser(@RequestBody UserDto user) {
 
         return userService.adicionarUser(user);
     }
 
     @GetMapping
-    public List<User> obteneruser() {
+    public List<UserDto> obteneruser() {
 
         return userService.obteneruser();
 

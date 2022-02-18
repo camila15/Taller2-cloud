@@ -1,5 +1,6 @@
 package co.edu.poli.showtimes.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,8 +11,9 @@ import java.util.Date;
 @Entity
 @Table(name="Tablashowtimes")
 @Data
+@Builder(toBuilder = true)
 
-public class showtimes {
+public class Showtimes {
 
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Id

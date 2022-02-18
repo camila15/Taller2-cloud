@@ -1,7 +1,8 @@
 package co.edu.poli.showtimes.controller;
 
-import co.edu.poli.showtimes.domain.showtimes;
-import co.edu.poli.showtimes.service.showtimesservice;
+import co.edu.poli.showtimes.DTO.ShowtimeDto;
+import co.edu.poli.showtimes.domain.Showtimes;
+import co.edu.poli.showtimes.service.Showtimesservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -14,32 +15,32 @@ import java.util.List;
 @RestController
 @RequestMapping(value ="showtime")
 
-public class showtimescontroller {
+public class Showtimescontroller {
 
     @Autowired
-    private showtimesservice showtimeservice;
+    private Showtimesservice showtimeservice;
 
     @PostMapping
-    public showtimes adicionarshowtimes(@RequestBody showtimes showtime) {
+    public Showtimes adicionarshowtimes(@RequestBody ShowtimeDto showtime) {
 
         return showtimeservice.adicionarshowtimes(showtime);
     }
 
     @GetMapping
-    public List<showtimes> obtenershowtimes() {
+    public List<Showtimes> obtenershowtimes() {
 
         return showtimeservice.obtenershowtimes();
     }
 
     @GetMapping("/{id}")
-    public showtimes obtenershowtimesid(@PathVariable("id") Long id) {
+    public Showtimes obtenershowtimesid(@PathVariable("id") Long id) {
 
         return showtimeservice.obtenershowtimesid(id);
     }
 
     @PutMapping ("/{id}")
 
-    public void actualizarshowtimes(@RequestBody showtimes showtime)
+    public void actualizarshowtimes(@RequestBody ShowtimeDto showtime)
     {
         showtimeservice.adicionarshowtimes(showtime);
     }
@@ -47,3 +48,4 @@ public class showtimescontroller {
 
 
 }
+

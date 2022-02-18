@@ -1,5 +1,6 @@
 package co.edu.poli.movies.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,9 +11,10 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name="Tablamovies")
 @Data
+@Builder(toBuilder = true)
 
 
-public class movies {
+public class Movies {
 
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Id

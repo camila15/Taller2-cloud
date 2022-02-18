@@ -1,6 +1,9 @@
 package co.edu.poli.Users.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -10,6 +13,9 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name="Tablauser")
 @Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 
 public class User {
 

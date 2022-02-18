@@ -1,7 +1,8 @@
 package co.edu.poli.bookings.controller;
 
-import co.edu.poli.bookings.domain.bookings;
-import co.edu.poli.bookings.service.bookingsservice;
+import co.edu.poli.bookings.DTO.BookingDto;
+import co.edu.poli.bookings.domain.Booking;
+import co.edu.poli.bookings.service.Bookingsservice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -14,26 +15,26 @@ import java.util.List;
 @RestController
 @RequestMapping(value ="booking")
 
-public class bookingscontroller {
+public class Bookingscontroller {
 
     @Autowired
-    private bookingsservice bookingservice;
+    private Bookingsservice bookingservice;
 
     @PostMapping
-    public bookings adicionarbookings(@RequestBody bookings booking) {
+    public Booking adicionarbookings(@RequestBody BookingDto booking) {
 
         return bookingservice.adicionarbookings(booking);
     }
 
     @GetMapping
-    public List<bookings> obtenerbookings() {
+    public List<BookingDto> obtenerbookings() {
 
         return bookingservice.obtenerbookings();
 
     }
 
     @GetMapping("/{id}")
-    public bookings obtenerbookingsid(@PathVariable("id") Long id) {
+    public Booking obtenerbookingsid(@PathVariable("id") Long id) {
 
        return bookingservice.obtenerbookingsid(id);
     }
@@ -45,7 +46,7 @@ public class bookingscontroller {
     }
 
     @GetMapping("/user/{userid}")
-    public bookings obtenerbookingsuserid(@PathVariable("userid") Long userid) {
+    public Booking obtenerbookingsuserid(@PathVariable("userid") Long userid) {
 
        return bookingservice.obtenerbookingsuserid(userid);
     }
