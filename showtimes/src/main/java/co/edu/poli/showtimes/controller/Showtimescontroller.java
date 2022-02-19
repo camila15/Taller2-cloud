@@ -27,7 +27,7 @@ public class Showtimescontroller {
     }
 
     @GetMapping
-    public List<Showtimes> obtenershowtimes() {
+    public List<ShowtimeDto> obtenershowtimes() {
 
         return showtimeservice.obtenershowtimes();
     }

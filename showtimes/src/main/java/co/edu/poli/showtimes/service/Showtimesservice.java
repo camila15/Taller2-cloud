@@ -7,6 +7,7 @@ import co.edu.poli.showtimes.repository.Showtimesrepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,9 +27,20 @@ public class Showtimesservice {
         return showtimerepository.save(buildShowtimes(showtime));
     }
 
-    public List<Showtimes> obtenershowtimes()
+    public List<ShowtimeDto> obtenershowtimes()
     {
-        return showtimerepository.findAll();
+
+            List<Showtimes>  obtenershowtime= showtimerepository.findAll();
+            List<ShowtimeDto> array= new ArrayList<>();
+
+            for (int i=0; i<obtenershowtime.size();i++){
+
+                array.add(buildShowtimeDto(obtenershowtime.get(i)));
+
+            }
+
+            return array;
+
     }
 
     public Showtimes obtenershowtimesid(Long id)
@@ -42,6 +54,15 @@ public class Showtimesservice {
                     .id(showtimedto.getId())
                     .date(showtimedto.getDate())
                     .movies(showtimedto.getMovies()).build();
+
+    }
+
+    public ShowtimeDto buildShowtimeDto(Showtimes showtime)
+    {
+        return ShowtimeDto.builder()
+                .id(showtime.getId())
+                .date(showtime.getDate())
+                .movies(showtime.getMovies()).build();
 
     }
 
